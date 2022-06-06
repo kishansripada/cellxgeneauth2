@@ -19,7 +19,7 @@ app.get('/app', (req, res) => {
 
 
 app.get('/login/:password', (req, res) => {
-    if (req.params.password == "fadhl") {
+    if (req.params.password == "password") {
         res.send(true)
     } else {
         res.send(false)
