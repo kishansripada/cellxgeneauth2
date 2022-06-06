@@ -1,0 +1,30 @@
+<script defer>
+
+    document.addEventListener("DOMContentLoaded", function (event) {
+        cookies = document.cookie.split("; ").reduce((prev, current) => {
+            const [name, ...value] = current.split("=");
+            prev[name] = value.join("=");
+            return prev;
+        }, {});
+        let root = document.getElementById("root")
+
+
+        console.log(root)
+        if (cookies?.auth == "XXVeh5U9hVu7Q87rhKQ51g==") {
+            root.innerHTML = `<iframe id=" inlineFrameExample" title="Inline Frame Example" width="100%" height="100%"
+        src="https://michigan-cellxgene.herokuapp.com/">
+        </iframe>`
+        } else {
+            root.innerHTML = "not authorized"
+            window.location.href = `${window.origin}/`
+        }
+    });
+
+
+</script>
+<div id="root"">
+</div>
+
+
+
+   
